@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/ConnectionManager.iml" filepath="$PROJECT_DIR$/ConnectionManager.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/toolbar+navigationversion100500.iml" filepath="$PROJECT_DIR$/toolbar+navigationversion100500.iml" />
     </modules>
   </component>
 </project>
