@@ -1,13 +1,24 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.batman.toolbarnavigationversion100500.FragmentNews">
+    tools:context="com.example.batman.toolbarnavigationversion100500.FragmentNews"
+    android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="News" />
+        android:layout_height="wrap_content"
+        android:text="News"
+        android:gravity="center_horizontal"/>
+    <ListView
+        android:id="@id/android:list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:text="Net Dannix"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@id/android:empty"/>
 
-</FrameLayout>
+</LinearLayout>
