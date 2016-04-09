@@ -66,7 +66,6 @@ public class MainActivity extends AppCompatActivity {
 
         setupDrawer();
 
-
     }
     private void setupDrawer(){
         toggle = new ActionBarDrawerToggle(this,drawerLayout,R.string.drawer_open,R.string.drawer_close){
