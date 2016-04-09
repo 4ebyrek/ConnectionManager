@@ -1,5 +1,6 @@
 package com.example.batman.toolbarnavigationversion100500;
 
+import android.app.FragmentManager;
 import android.app.FragmentTransaction;
 import android.content.res.Configuration;
 import android.app.Fragment;
@@ -27,10 +28,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
-    private Elements content,cont;
-    private Document document,doc;
 
-    String urls;
     Fragment fragment = null;
 
     private FragmentTransaction fragmentTransaction;
@@ -42,14 +40,13 @@ public class MainActivity extends AppCompatActivity {
     private ListView listView_navigation_drawer;
     private String[] items = {"News","Bets","Experts","About Us"};
     private ArrayAdapter<String> adapter;
-    private ArrayList<String> news_item_cont = new ArrayList<String>();
-    private ArrayList<String> news_short_text = new ArrayList<String>();
 
 
     //
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
 
 
@@ -68,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         setupDrawer();
-        new JsoupThread().execute();
+
 
     }
     private void setupDrawer(){
@@ -103,6 +100,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    public void onBackPressed() {
+        FragmentManager fm = getFragmentManager();
+        if (fm.getBackStackEntryCount() > 0) {
+            fm.popBackStack();
+        } else {
+            super.onBackPressed();
+        }
+    }
+    @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if(toggle.onOptionsItemSelected(item)){
             return true;
@@ -121,18 +127,31 @@ public class MainActivity extends AppCompatActivity {
             case 0 :
                 Bundle args = new Bundle();
                 fragment = new FragmentNews();
-                args.putStringArrayList("asd", news_short_text);
-                fragment.setArguments(args);
-
+//                fragmentTransaction = getFragmentManager().beginTransaction();
+//                fragmentTransaction.replace(R.id.fragment_holder, fragment);
+//                fragmentTransaction.addToBackStack(null);
+//                fragmentTransaction.commit();
                 break;
             case 1 :
                 fragment = new FragmentBets();
+//                fragmentTransaction = getFragmentManager().beginTransaction();
+//                fragmentTransaction.replace(R.id.fragment_holder, fragment);
+//                //fragmentTransaction.addToBackStack(null);
+//                fragmentTransaction.commit();
                 break;
             case 2 :
                 fragment = new FragmentExperts();
+//                fragmentTransaction = getFragmentManager().beginTransaction();
+//                fragmentTransaction.replace(R.id.fragment_holder, fragment);
+//              //  fragmentTransaction.addToBackStack(null);
+//                fragmentTransaction.commit();
                 break;
             case 3 :
                 fragment = new FragmentAbout();
+//                fragmentTransaction = getFragmentManager().beginTransaction();
+//                fragmentTransaction.replace(R.id.fragment_holder, fragment);
+//               // fragmentTransaction.addToBackStack(null);
+//                fragmentTransaction.commit();
                 break;
             default:
                 break;
@@ -141,6 +160,7 @@ public class MainActivity extends AppCompatActivity {
 
             fragmentTransaction = getFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_holder, fragment);
+            fragmentTransaction.addToBackStack(null);
             fragmentTransaction.commit();
 
         }else {
@@ -152,47 +172,5 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public class JsoupThread extends AsyncTask<String,Void,ArrayList<String>>{
-
-        @Override
-        protected ArrayList<String> doInBackground(String... params) {
-
-            try {
-                document = Jsoup.connect("http://www.sports.ru/topnews/").get();
-                content = document.select(".short-text");
-                news_short_text.clear();
-                news_item_cont.clear();
-
-                for(Element element:content){
-                    urls = "http://www.sports.ru"+element.attr("href");
-                    doc = Jsoup.connect(urls).get();
-                    cont = doc.select(".news-item__content");
-                    for(Element elementi :cont){
-                        news_item_cont.add(elementi.text());
-                    }
-                    news_short_text.add(element.text());
-
-
-
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(ArrayList<String> s) {
-
-            if(news_short_text != null){
-                for(int i =0;i<news_short_text.size();i++) {
-                    Log.d("****************", news_short_text.get(i));
-                }
-            }else{
-                Log.d("****************","tam 4e to est;");
-            }
-
-        }
-    }
 
 }
