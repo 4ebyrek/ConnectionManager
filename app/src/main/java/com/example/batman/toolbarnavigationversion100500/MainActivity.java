@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity {
 
         switch (position){
             case 0 :
-                Bundle args = new Bundle();
+
                 fragment = new FragmentNews();
 //                fragmentTransaction = getFragmentManager().beginTransaction();
 //                fragmentTransaction.replace(R.id.fragment_holder, fragment);
