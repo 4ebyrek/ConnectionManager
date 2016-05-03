@@ -2,9 +2,7 @@ package com.example.batman.toolbarnavigationversion100500;
 
 
 import android.os.Bundle;
-
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,11 +12,13 @@ import android.widget.TextView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class FragmentAbout extends Fragment {
+public class ListItemOfExperts extends Fragment {
 
-TextView text_about;
+    String text_experts;
+    TextView txt;
 
-    public FragmentAbout() {
+
+    public ListItemOfExperts() {
         // Required empty public constructor
     }
 
@@ -26,9 +26,10 @@ TextView text_about;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-       View v = inflater.inflate(R.layout.fragment_about, container, false);
-        Log.d("CONSTANTAAAAAAAAAAH",MainActivity.USER_LOGIN);
-        text_about = (TextView) v.findViewById(R.id.about_text);
+        View v =inflater.inflate(R.layout.list_item_of_experts, container, false);
+        text_experts = this.getArguments().getString("expert");
+        txt = (TextView) v.findViewById(R.id.expert_text);
+        txt.setText(text_experts);
         return v;
     }
 

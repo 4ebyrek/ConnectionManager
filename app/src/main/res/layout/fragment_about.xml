@@ -1,13 +1,22 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.batman.toolbarnavigationversion100500.FragmentAbout">
+    tools:context="com.example.batman.toolbarnavigationversion100500.FragmentAbout"
+    android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="About Us" />
+        android:layout_height="wrap_content"
+        android:text="About Us"
+        android:gravity="center_horizontal"/>
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/about_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:text="@string/about_us"
+    />
+</LinearLayout>

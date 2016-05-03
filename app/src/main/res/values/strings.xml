@@ -1,9 +1,24 @@
 <resources>
-    <string name="app_name">toolbar+navigationversion100500</string>
+    <string name="app_name">Betting Forecast</string>
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment2">Hello blank fragment</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="about_us">
+        Проект разрабатывался не в комерческих целях, контент новостей (News) был скопирован
+        с сайта www.sports.ru, контент ставок (Bets) с сайта www.olimp.kz, контент прогнозов
+        (Experts) с сайта www.stavochka.ru.
+
+        Над проектом работали:
+        Жармухамбетов Арман - разработка Базы Знаний и предметная область.
+        Хайрулла Айбек - разработка Базы Данных(SQLite).
+        Мингазов Эльдар - разработка интерфейса и бэкграунд процессов.
+
+        Азарт вреден для Здоровья!!!!)))
+
+                            А так С Ы К П Е Й Д Ы .
+
+    </string>
 </resources>

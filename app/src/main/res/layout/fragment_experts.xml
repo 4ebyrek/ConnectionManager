@@ -1,13 +1,34 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.batman.toolbarnavigationversion100500.FragmentExperts">
+    tools:context="com.example.batman.toolbarnavigationversion100500.FragmentExperts"
+    android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Experts" />
+        android:layout_height="wrap_content"
+        android:text="Experts"
+        android:textSize="25sp"
+        android:gravity="center_horizontal"
+         />
+    <ListView
+        android:id="@android:id/list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:text="Experts List is loading please wait a second"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@id/android:empty"
+        android:paddingTop="150dp"
+        android:gravity="center_horizontal"/>
 
-</FrameLayout>
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/progressBar2"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>
