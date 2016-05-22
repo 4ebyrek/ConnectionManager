@@ -1,11 +1,6 @@
 package com.example.batman.toolbarnavigationversion100500;
 
 
-
-
-
-
-
 import android.content.res.Configuration;
 
 import android.database.sqlite.SQLiteDatabase;
@@ -185,10 +180,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        DbHelper mDbHelper = new DbHelper(this,"myDataBase.db",null,1);
-        SQLiteDatabase sdb = mDbHelper.getWritableDatabase();
-        sdb.delete("Bets", null, null);
-        MainActivity.USER_LOGIN = "";
+//        DbHelper mDbHelper = new DbHelper(this,"myDataBase.db",null,1);
+//        SQLiteDatabase sdb = mDbHelper.getWritableDatabase();
+//        sdb.delete("Bets", null, null);
+//        MainActivity.USER_LOGIN = "";
 //        if(this.deleteDatabase("myDataBase.db")){
 //            Log.d("On DESTROY", "DATABASE DELETED");
 //        }
